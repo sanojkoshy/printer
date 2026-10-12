@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrintDesk | Document Printing</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image */
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.30),
+      rgba(15, 23, 42, 0.30)
+    ),
+    url("D:\realworld project\images\background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Glass container */
+.container {
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+    .container {
+   
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  color: #172033;
+
+  background:
+    radial-gradient(circle at 15% 20%, #c7d8ff 0, transparent 35%),
+    radial-gradient(circle at 85% 80%, #d9ccff 0, transparent 35%),
+    linear-gradient(135deg, #edf3ff, #e6e9f5);
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(31, 55, 100, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+header {
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: rgba(255, 255, 255, 0.20);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+main {
+  padding: 28px;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #64748b;
+
+  background: rgba(255, 255, 255, 0.20);
+  border-top: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* Glass-style upload area */
+.upload-box {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px dashed rgba(40, 100, 232, 0.55);
+  border-radius: 16px;
+
+  transition: 0.25s ease;
+}
+
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: #2864e8;
+  transform: translateY(-2px);
+}
+
+/* Keep the native file input hidden */
+#fileInput {
+  display: none;
+}
+
+/* Glass-style print options */
+.option {
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: #9bb8ff;
+}
+
+.option.selected {
+  background: rgba(226, 236, 255, 0.78);
+  border: 1px solid #2864e8;
+  box-shadow: 0 4px 16px rgba(40, 100, 232, 0.10);
+}
+
+/* Translucent order summary */
+.summary {
+  padding: 17px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+}
+
+/* Smooth payment button */
+.payment-button {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #3979f6, #2456d8);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 8px 22px rgba(40, 100, 232, 0.24);
+  transition: 0.2s ease;
+}
+
+.payment-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(40, 100, 232, 0.30);
+}
+
+@media (max-width: 420px) {
+ 
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image */
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.30),
+      rgba(15, 23, 42, 0.30)
+    ),
+    url("images/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Glass container */
+.container {
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+  .container {
+    border-radius: 20px;
+  }
+
+  main {
+    padding: 22px 18px;
+  }
+
+  header {
+    padding: 20px 18px;
+  }
+}
+
+    }
+
+    header {
+      padding: 24px 28px;
+      border-bottom: 1px solid #e5eaf2;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .logo {
+      background: #2864e8;
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    header h2 {
+      font-size: 21px;
+    }
+
+    header p {
+      margin-top: 4px;
+      color: #718096;
+      font-size: 12px;
+    }
+
+    main {
+      padding: 28px;
+    }
+
+    .eyebrow {
+      color: #2864e8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 29px;
+      letter-spacing: -0.8px;
+    }
+
+    .description {
+      color: #718096;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 10px 0 28px;
+    }
+
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .section-title span {
+      color: #718096;
+      font-size: 12px;
+    }
+
+   
+.upload-box {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #f8faff;
+  border: 2px dashed #c8d5ea;
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+.upload-box:hover {
+  border-color: #2864e8;
+  background: #eff4ff;
+}
+
+.upload-icon {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.upload-box strong {
+  display: block;
+  font-size: 14px;
+}
+
+.upload-box p {
+  margin-top: 8px;
+  color: #718096;
+  font-size: 12px;
+}
+
+#fileName {
+  display: block;
+  margin-top: 12px;
+  color: #138a4b;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+#fileInput {
+  display: none;
+}
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .option {
+      border: 1px solid #dce4ef;
+      background: white;
+      border-radius: 13px;
+      padding: 16px 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #172033;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .option:hover {
+      border-color: #8ba9eb;
+    }
+
+    .option.selected {
+      border: 2px solid #2864e8;
+      background: #eff4ff;
+      padding: 15px 11px;
+    }
+
+    .option .icon {
+      font-size: 23px;
+    }
+
+    .option strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .option small {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+      color: #718096;
+    }
+
+    .summary {
+      padding: 17px;
+      background: #f8faff;
+      border: 1px solid #dce4ef;
+      border-radius: 13px;
+      margin-bottom: 20px;
+    }
+
+    .summary h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 7px 0;
+      font-size: 12px;
+      color: #718096;
+    }
+
+    .summary-row strong {
+      color: #172033;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    .payment-button {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      background: #2864e8;
+      color: white;
+      padding: 17px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .payment-button:hover {
+      background: #1f4fc0;
+      transform: translateY(-1px);
+    }
+
+    #message {
+      display: none;
+      margin-top: 15px;
+      padding: 13px;
+      background: #eaf8f0;
+      color: #17633d;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid #e5eaf2;
+      background: #fbfcfe;
+      text-align: center;
+      padding: 16px;
+      color: #718096;
+      font-size: 11px;
+    }
+
+    @media (max-width: 420px) {
+      main {
+        padding: 22px 18px;
+      }
+
+      header {
+        padding: 20px 18px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .option {
+        padding: 12px 8px;
+        gap: 7px;
+      }
+
+      .option.selected {
+        padding: 11px 7px;
+      }
+
+      .option strong {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div class="logo">▤</div>
+      <div>
+        <h2>PrintDesk</h2>
+        <p>Simple, reliable document printing</p>
+      </div>
+    </header>
+
+    <main>
+      <p class="eyebrow">Print service</p>
+      <h1>Prepare your print order</h1>
+      <p class="description">
+        Upload your document and choose your printing preferences.
+        Review your selections before continuing.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h3>1. Upload document</h3>
+          <span>Required</span>
+        </div>
+
+        <label class="upload-box" for="fileInput">
+          <div class="upload-icon">📄</div>
+          <strong>Drag and drop your file or <span>browse</span></strong>
+          <p>PDF, DOC, DOCX, TXT, PNG or JPG · Max 20 MB</p>
+          <span id="fileName">No file selected</span>
+        </label>
+
+        <input
+          type="file"
+          id="fileInput"
+          accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+        >
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h3>2. Select print sides</h3>
+          <span>Choose one</span>
+        </div>
+
+        <div class="options">
+          <button class="option selected" data-group="sides"
+                  data-value="Single-sided">
+            <span class="icon">📄</span>
+            <span>
+              <strong>Single-sided</strong>
+              <small>Print on one side</small>
+            </span>
+          </button>
+
+          <button class="option" data-group="sides"
+                  data-value="Double-sided">
+            <span class="icon">📑</span>
+            <span>
+              <strong>Double-sided</strong>
+              <small>Print on both sides</small>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h3>3. Select colour mode</h3>
+          <span>Choose one</span>
+        </div>
+
+        <div class="options">
+          <button class="option selected" data-group="color"
+                  data-value="Black & white">
+            <span class="icon">◐</span>
+            <span>
+              <strong>Black &amp; white</strong>
+              <small>Monochrome printing</small>
+            </span>
+          </button>
+
+          <button class="option" data-group="color"
+                  data-value="Colour">
+            <span class="icon">🎨</span>
+            <span>
+              <strong>Colour</strong>
+              <small>Full-colour printing</small>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="summary">
+        <h3>Order summary</h3>
+
+        <div class="summary-row">
+          <span>Document</span>
+          <strong id="summaryFile">No file selected</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Print sides</span>
+          <strong id="summarySides">Single-sided</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Colour mode</span>
+          <strong id="summaryColor">Black &amp; white</strong>
+        </div>
+      </section>
+
+      <button class="payment-button" id="paymentButton">
+        Continue to payment →
+      </button>
+
+      <div id="message" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer>
+      PrintDesk · Document printing made simple
+    </footer>
+
+  </div>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+    const summaryFile = document.getElementById("summaryFile");
+    const summarySides = document.getElementById("summarySides");
+    const summaryColor = document.getElementById("summaryColor");
+    const message = document.getElementById("message");
+
+    const order = {
+      file: null,
+      sides: "Single-sided",
+      color: "Black & white"
+    };
+
+    const allowedTypes = /\.(pdf|doc|docx|txt|png|jpe?g)$/i;
+    const maxSize = 20 * 1024 * 1024;
+
+    function showMessage(text) {
+      message.textContent = text;
+      message.style.display = "block";
+    }
+
+    function clearMessage() {
+      message.textContent = "";
+      message.style.display = "none";
+    }
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+
+      if (!file) return;
+
+      if (!allowedTypes.test(file.name)) {
+        fileInput.value = "";
+        showMessage("Please select a supported document or image file.");
+        return;
+      }
+
+      if (file.size > maxSize) {
+        fileInput.value = "";
+        showMessage("File size must be 20 MB or less.");
+        return;
+      }
+
+      order.file = file;
+      fileName.textContent = file.name;
+      summaryFile.textContent = file.name;
+      clearMessage();
+    });
+
+    document.querySelectorAll(".option").forEach(button => {
+      button.addEventListener("click", () => {
+        const group = button.dataset.group;
+        order[group] = button.dataset.value;
+
+        document.querySelectorAll(
+          `.option[data-group="${group}"]`
+        ).forEach(option => {
+          option.classList.toggle("selected", option === button);
+        });
+
+        summarySides.textContent = order.sides;
+        summaryColor.textContent = order.color;
+        clearMessage();
+      });
+    });
+
+    document.getElementById("paymentButton").addEventListener("click", () => {
+      if (!order.file) {
+        showMessage("Please upload a document before continuing.");
+        fileInput.click();
+        return;
+      }
+
+      showMessage(
+        `Your order is ready for review. File: ${order.file.name}. ` +
+        `Print sides: ${order.sides}. Colour mode: ${order.color}. ` +
+        "A payment gateway must be connected to process real payments."
+      );
+    });
+  </script>
+</body>
+</html>
