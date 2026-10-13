@@ -1,254 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrintDesk | Document Printing</title>
-
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
-
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
   margin: 0;
   padding: 30px 15px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   /* Background image */
   background-image:
     linear-gradient(
       rgba(15, 23, 42, 0.30),
       rgba(15, 23, 42, 0.30)
     ),
-    url("D:\realworld project\images\background.jpg");
-
+    url("./images/contr_img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
 /* Glass container */
 .container {
   width: 100%;
   max-width: 550px;
   overflow: hidden;
-
   background: rgba(255, 255, 255, 0.58);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 24px;
-
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
 }
-
-
-    .container {
-   
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 15px;
-  color: #172033;
-
-  background:
-    radial-gradient(circle at 15% 20%, #c7d8ff 0, transparent 35%),
-    radial-gradient(circle at 85% 80%, #d9ccff 0, transparent 35%),
-    linear-gradient(135deg, #edf3ff, #e6e9f5);
-}
-
-.container {
-  width: 100%;
-  max-width: 550px;
-  overflow: hidden;
-
-  /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 24px;
-
-  box-shadow:
-    0 20px 60px rgba(31, 55, 100, 0.13),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-header {
-  padding: 24px 28px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  background: rgba(255, 255, 255, 0.20);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-}
-
-main {
-  padding: 28px;
-}
-
-footer {
-  padding: 16px;
-  text-align: center;
-  font-size: 11px;
-  color: #64748b;
-
-  background: rgba(255, 255, 255, 0.20);
-  border-top: 1px solid rgba(255, 255, 255, 0.65);
-}
-
-/* Glass-style upload area */
-.upload-box {
-  display: block;
-  width: 100%;
-  min-height: 180px;
-  padding: 28px 20px;
-  text-align: center;
-  cursor: pointer;
-
-  background: rgba(255, 255, 255, 0.38);
-  border: 1px dashed rgba(40, 100, 232, 0.55);
-  border-radius: 16px;
-
-  transition: 0.25s ease;
-}
-
-.upload-box:hover {
-  background: rgba(255, 255, 255, 0.65);
-  border-color: #2864e8;
-  transform: translateY(-2px);
-}
-
-/* Keep the native file input hidden */
-#fileInput {
-  display: none;
-}
-
-/* Glass-style print options */
-.option {
-  background: rgba(255, 255, 255, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 14px;
-  transition: 0.2s ease;
-}
-
-.option:hover {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: #9bb8ff;
-}
-
-.option.selected {
-  background: rgba(226, 236, 255, 0.78);
-  border: 1px solid #2864e8;
-  box-shadow: 0 4px 16px rgba(40, 100, 232, 0.10);
-}
-
-/* Translucent order summary */
-.summary {
-  padding: 17px;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 14px;
-}
-
-/* Smooth payment button */
-.payment-button {
-  width: 100%;
-  padding: 17px;
-  border: none;
-  border-radius: 13px;
-
-  background: linear-gradient(135deg, #3979f6, #2456d8);
-  color: white;
-
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-
-  box-shadow: 0 8px 22px rgba(40, 100, 232, 0.24);
-  transition: 0.2s ease;
-}
-
-.payment-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(40, 100, 232, 0.30);
-}
-
-@media (max-width: 420px) {
- 
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  min-height: 100vh;
-  margin: 0;
-  padding: 30px 15px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Background image */
-  background-image:
-    linear-gradient(
-      rgba(15, 23, 42, 0.30),
-      rgba(15, 23, 42, 0.30)
-    ),
-    url("images/background.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Glass container */
-.container {
-  width: 100%;
-  max-width: 550px;
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.58);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 24px;
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-}
-
-
-  .container {
-    border-radius: 20px;
-  }
-
-  main {
-    padding: 22px 18px;
-  }
-
-  header {
-    padding: 20px 18px;
-  }
-}
-
-    }
-
     header {
       padding: 24px 28px;
       border-bottom: 1px solid #e5eaf2;
@@ -256,7 +49,6 @@ body {
       align-items: center;
       gap: 13px;
     }
-
     .logo {
       background: #2864e8;
       color: white;
@@ -264,21 +56,17 @@ body {
       border-radius: 12px;
       font-size: 22px;
     }
-
     header h2 {
       font-size: 21px;
     }
-
     header p {
       margin-top: 4px;
       color: #718096;
       font-size: 12px;
     }
-
     main {
       padding: 28px;
     }
-
     .eyebrow {
       color: #2864e8;
       font-size: 11px;
@@ -287,23 +75,19 @@ body {
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-
     h1 {
       font-size: 29px;
       letter-spacing: -0.8px;
     }
-
     .description {
       color: #718096;
       font-size: 14px;
       line-height: 1.6;
       margin: 10px 0 28px;
     }
-
     .section {
       margin-bottom: 26px;
     }
-
     .section-title {
       display: flex;
       justify-content: space-between;
@@ -311,13 +95,10 @@ body {
       margin-bottom: 12px;
       font-size: 14px;
     }
-
     .section-title span {
       color: #718096;
       font-size: 12px;
     }
-
-   
 .upload-box {
   display: block;
   width: 100%;
@@ -330,29 +111,24 @@ body {
   border-radius: 14px;
   transition: 0.2s ease;
 }
-
 .upload-box:hover {
   border-color: #2864e8;
   background: #eff4ff;
 }
-
 .upload-icon {
   display: block;
   font-size: 32px;
   margin-bottom: 12px;
 }
-
 .upload-box strong {
   display: block;
   font-size: 14px;
 }
-
 .upload-box p {
   margin-top: 8px;
   color: #718096;
   font-size: 12px;
 }
-
 #fileName {
   display: block;
   margin-top: 12px;
@@ -360,17 +136,39 @@ body {
   font-size: 12px;
   overflow-wrap: anywhere;
 }
-
 #fileInput {
   display: none;
 }
+
+    .clear-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 14px;
+      border: 1px solid #d9e1ee;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.75);
+      color: #44516a;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .clear-button:hover {
+      border-color: #dc6262;
+      background: #fff4f4;
+      color: #b42323;
+    }
+
+    .clear-button[hidden] {
+      display: none;
+    }
 
     .options {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
-
     .option {
       border: 1px solid #dce4ef;
       background: white;
@@ -384,33 +182,27 @@ body {
       align-items: center;
       gap: 10px;
     }
-
     .option:hover {
       border-color: #8ba9eb;
     }
-
     .option.selected {
       border: 2px solid #2864e8;
       background: #eff4ff;
       padding: 15px 11px;
     }
-
     .option .icon {
       font-size: 23px;
     }
-
     .option strong {
       display: block;
       font-size: 13px;
     }
-
     .option small {
       display: block;
       margin-top: 5px;
       font-size: 11px;
       color: #718096;
     }
-
     .summary {
       padding: 17px;
       background: #f8faff;
@@ -418,12 +210,10 @@ body {
       border-radius: 13px;
       margin-bottom: 20px;
     }
-
     .summary h3 {
       font-size: 14px;
       margin-bottom: 12px;
     }
-
     .summary-row {
       display: flex;
       justify-content: space-between;
@@ -432,13 +222,11 @@ body {
       font-size: 12px;
       color: #718096;
     }
-
     .summary-row strong {
       color: #172033;
       text-align: right;
       overflow-wrap: anywhere;
     }
-
     .payment-button {
       width: 100%;
       border: none;
@@ -451,12 +239,10 @@ body {
       cursor: pointer;
       transition: 0.2s;
     }
-
     .payment-button:hover {
       background: #1f4fc0;
       transform: translateY(-1px);
     }
-
     #message {
       display: none;
       margin-top: 15px;
@@ -468,7 +254,6 @@ body {
       line-height: 1.6;
       overflow-wrap: anywhere;
     }
-
     footer {
       border-top: 1px solid #e5eaf2;
       background: #fbfcfe;
@@ -477,39 +262,68 @@ body {
       color: #718096;
       font-size: 11px;
     }
-
     @media (max-width: 420px) {
       main {
         padding: 22px 18px;
       }
-
       header {
         padding: 20px 18px;
       }
-
       h1 {
         font-size: 25px;
       }
-
       .option {
         padding: 12px 8px;
         gap: 7px;
       }
-
       .option.selected {
         padding: 11px 7px;
       }
-
       .option strong {
         font-size: 12px;
       }
     }
+
+    .page-count-control {
+      display: none;
+      margin-top: 12px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 13px;
+    }
+
+    .page-count-control label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #172033;
+    }
+
+    .page-count-control input,
+    .copy-select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dce4ef;
+      border-radius: 10px;
+      background: white;
+      color: #172033;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .field-help {
+      margin-top: 8px;
+      color: #718096;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
   </style>
 </head>
-
 <body>
   <div class="container">
-
     <header>
       <div class="logo">▤</div>
       <div>
@@ -517,7 +331,6 @@ body {
         <p>Simple, reliable document printing</p>
       </div>
     </header>
-
     <main>
       <p class="eyebrow">Print service</p>
       <h1>Prepare your print order</h1>
@@ -525,33 +338,38 @@ body {
         Upload your document and choose your printing preferences.
         Review your selections before continuing.
       </p>
-
       <section class="section">
         <div class="section-title">
           <h3>1. Upload document</h3>
           <span>Required</span>
         </div>
-
         <label class="upload-box" for="fileInput">
           <div class="upload-icon">📄</div>
           <strong>Drag and drop your file or <span>browse</span></strong>
-          <p>PDF, DOC, DOCX, TXT, PNG or JPG · Max 20 MB</p>
+          <p>PDF, DOC, DOCX, TXT, PNG or JPG · Max 10 printed pages · Max 20 MB</p>
           <span id="fileName">No file selected</span>
         </label>
-
         <input
           type="file"
           id="fileInput"
-          accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+          accept=".pdf,application/pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
         >
-      </section>
+        <button type="button" id="clearFileButton" class="clear-button" hidden>
+          Clear uploaded document
+        </button>
 
+        <div class="page-count-control" id="manualPageCountControl">
+          <label for="manualPageCount">Number of pages in document</label>
+          <input type="number" id="manualPageCount" min="1" max="10" step="1"
+                 placeholder="Enter page count (1–10)" inputmode="numeric">
+          <p class="field-help">Enter the page count for DOC, DOCX and TXT files, or if automatic PDF counting is unavailable. The maximum is 10 pages per copy.</p>
+        </div>
+      </section>
       <section class="section">
         <div class="section-title">
           <h3>2. Select print sides</h3>
           <span>Choose one</span>
         </div>
-
         <div class="options">
           <button class="option selected" data-group="sides"
                   data-value="Single-sided">
@@ -561,7 +379,6 @@ body {
               <small>Print on one side</small>
             </span>
           </button>
-
           <button class="option" data-group="sides"
                   data-value="Double-sided">
             <span class="icon">📑</span>
@@ -572,13 +389,11 @@ body {
           </button>
         </div>
       </section>
-
       <section class="section">
         <div class="section-title">
           <h3>3. Select colour mode</h3>
           <span>Choose one</span>
         </div>
-
         <div class="options">
           <button class="option selected" data-group="color"
                   data-value="Black & white">
@@ -588,7 +403,6 @@ body {
               <small>Monochrome printing</small>
             </span>
           </button>
-
           <button class="option" data-group="color"
                   data-value="Colour">
             <span class="icon">🎨</span>
@@ -600,54 +414,101 @@ body {
         </div>
       </section>
 
+
+      <section class="section">
+        <div class="section-title">
+          <h3>4. Number of copies</h3>
+          <span>Maximum 10 printed pages</span>
+        </div>
+
+        <select id="copyCount" class="copy-select" aria-label="Number of copies">
+          <option value="1" selected>1× copy</option>
+          <option value="2">2× copies</option>
+          <option value="3">3× copies</option>
+          <option value="4">4× copies</option>
+          <option value="5">5× copies</option>
+          <option value="6">6× copies</option>
+          <option value="7">7× copies</option>
+          <option value="8">8× copies</option>
+          <option value="9">9× copies</option>
+          <option value="10">10× copies</option>
+        </select>
+        <p class="field-help">Total printed pages = pages in one copy × number of copies.</p>
+      </section>
+
       <section class="summary">
         <h3>Order summary</h3>
-
         <div class="summary-row">
           <span>Document</span>
           <strong id="summaryFile">No file selected</strong>
         </div>
-
         <div class="summary-row">
           <span>Print sides</span>
           <strong id="summarySides">Single-sided</strong>
         </div>
-
         <div class="summary-row">
           <span>Colour mode</span>
           <strong id="summaryColor">Black &amp; white</strong>
         </div>
-      </section>
 
+        <div class="summary-row">
+          <span>Pages per copy</span>
+          <strong id="summaryPages">Not calculated</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Copies</span>
+          <strong id="summaryCopies">1×</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Total printed pages</span>
+          <strong id="summaryTotalPages">Not calculated / 10</strong>
+        </div>
+      </section>
       <button class="payment-button" id="paymentButton">
         Continue to payment →
       </button>
-
       <div id="message" role="status" aria-live="polite"></div>
     </main>
-
     <footer>
       PrintDesk · Document printing made simple
     </footer>
-
   </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     const fileInput = document.getElementById("fileInput");
+    const clearFileButton = document.getElementById("clearFileButton");
     const fileName = document.getElementById("fileName");
     const summaryFile = document.getElementById("summaryFile");
     const summarySides = document.getElementById("summarySides");
     const summaryColor = document.getElementById("summaryColor");
+    const summaryPages = document.getElementById("summaryPages");
+    const summaryCopies = document.getElementById("summaryCopies");
+    const summaryTotalPages = document.getElementById("summaryTotalPages");
+    const manualPageCountControl = document.getElementById("manualPageCountControl");
+    const manualPageCount = document.getElementById("manualPageCount");
+    const copyCount = document.getElementById("copyCount");
     const message = document.getElementById("message");
+
+    const MAX_PRINTED_PAGES = 10;
+    const allowedTypes = /\.(pdf|doc|docx|txt|png|jpe?g)$/i;
+    const maxSize = 20 * 1024 * 1024;
 
     const order = {
       file: null,
       sides: "Single-sided",
-      color: "Black & white"
+      color: "Black & white",
+      pagesPerCopy: null,
+      copies: 1
     };
 
-    const allowedTypes = /\.(pdf|doc|docx|txt|png|jpe?g)$/i;
-    const maxSize = 20 * 1024 * 1024;
+    let fileReadToken = 0;
+
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
 
     function showMessage(text) {
       message.textContent = text;
@@ -659,26 +520,181 @@ body {
       message.style.display = "none";
     }
 
-    fileInput.addEventListener("change", () => {
-      const file = fileInput.files[0];
+    function updatePageSummary() {
+      summaryPages.textContent = order.pagesPerCopy === null
+        ? "Not calculated"
+        : String(order.pagesPerCopy);
+      summaryCopies.textContent = `${order.copies}×`;
+      summaryTotalPages.textContent = order.pagesPerCopy === null
+        ? `Not calculated / ${MAX_PRINTED_PAGES}`
+        : `${order.pagesPerCopy * order.copies} / ${MAX_PRINTED_PAGES}`;
+    }
 
+    function resetFileState() {
+      // Invalidate any PDF page-count operation still in progress.
+      fileReadToken++;
+      order.file = null;
+      order.pagesPerCopy = null;
+      order.copies = 1;
+      fileInput.value = "";
+      fileName.textContent = "No file selected";
+      summaryFile.textContent = "No file selected";
+      manualPageCount.value = "";
+      manualPageCountControl.style.display = "none";
+      clearFileButton.hidden = true;
+      copyCount.value = "1";
+      updatePageSummary();
+    }
+
+    clearFileButton.addEventListener("click", () => {
+      resetFileState();
+      clearMessage();
+    });
+
+    function applyPageCount(pageCount) {
+      if (!Number.isInteger(pageCount) || pageCount < 1) {
+        order.pagesPerCopy = null;
+        updatePageSummary();
+        return false;
+      }
+
+      if (pageCount > MAX_PRINTED_PAGES) {
+        resetFileState();
+        showMessage("You have reached the limit of 10 pages per copy. Please select a document with 10 pages or fewer.");
+        return false;
+      }
+
+      order.pagesPerCopy = pageCount;
+      if (order.pagesPerCopy * order.copies > MAX_PRINTED_PAGES) {
+        order.copies = 1;
+        copyCount.value = "1";
+        updatePageSummary();
+        showMessage("You have reached the limit of 10 printed pages. The number of copies has been reset to 1.");
+        return true;
+      }
+
+      updatePageSummary();
+      clearMessage();
+      return true;
+    }
+
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files[0];
       if (!file) return;
 
+      const thisReadToken = ++fileReadToken;
+      const extension = file.name.split(".").pop().toLowerCase();
+
       if (!allowedTypes.test(file.name)) {
-        fileInput.value = "";
+        resetFileState();
         showMessage("Please select a supported document or image file.");
         return;
       }
 
       if (file.size > maxSize) {
-        fileInput.value = "";
+        resetFileState();
         showMessage("File size must be 20 MB or less.");
         return;
       }
 
       order.file = file;
+      order.pagesPerCopy = null;
+      order.copies = 1;
+      copyCount.value = "1";
       fileName.textContent = file.name;
       summaryFile.textContent = file.name;
+      clearFileButton.hidden = false;
+      manualPageCount.value = "";
+      manualPageCountControl.style.display = "none";
+      updatePageSummary();
+      clearMessage();
+
+      if (extension === "pdf") {
+        if (!window.pdfjsLib) {
+          // Keep the PDF uploaded even if the external page-count library fails to load.
+          manualPageCountControl.style.display = "block";
+          showMessage(
+            "The PDF is uploaded, but automatic page counting is unavailable. " +
+            "Enter the PDF page count below, or check your internet connection."
+          );
+          return;
+        }
+
+        showMessage("PDF selected. Reading page count...");
+        try {
+          // Uint8Array is the format PDF.js expects for local file data.
+          const pdfData = new Uint8Array(await file.arrayBuffer());
+          const pdfDocument = await pdfjsLib.getDocument({
+            data: pdfData,
+            disableWorker: true
+          }).promise;
+
+          if (thisReadToken !== fileReadToken) return;
+          if (!applyPageCount(pdfDocument.numPages)) return;
+        } catch (error) {
+          if (thisReadToken !== fileReadToken) return;
+
+          // Do not clear the selected PDF if PDF.js cannot parse it.
+          manualPageCountControl.style.display = "block";
+          manualPageCount.value = "";
+          order.pagesPerCopy = null;
+          updatePageSummary();
+          showMessage(
+            "The PDF file is selected, but automatic page counting failed. " +
+            "Enter its page count below. If the PDF is password-protected or damaged, " +
+            "open it and save an accessible copy first."
+          );
+        }
+      } else if (extension === "png" || extension === "jpg" || extension === "jpeg") {
+        applyPageCount(1);
+      } else {
+        manualPageCountControl.style.display = "block";
+        showMessage("Enter the page count for this document before continuing.");
+      }
+    });
+
+    manualPageCount.addEventListener("input", () => {
+      const value = manualPageCount.value;
+      if (value === "") {
+        order.pagesPerCopy = null;
+        updatePageSummary();
+        return;
+      }
+
+      const pageCount = Number(value);
+      if (!Number.isInteger(pageCount) || pageCount < 1) {
+        order.pagesPerCopy = null;
+        updatePageSummary();
+        showMessage("Enter a page count from 1 to 10.");
+        return;
+      }
+
+      if (pageCount > MAX_PRINTED_PAGES) {
+        manualPageCount.value = "";
+        order.pagesPerCopy = null;
+        updatePageSummary();
+        showMessage("You have reached the limit of 10 pages per copy.");
+        return;
+      }
+
+      applyPageCount(pageCount);
+    });
+
+    copyCount.addEventListener("change", () => {
+      const selectedCopies = Number(copyCount.value);
+      if (!Number.isInteger(selectedCopies) || selectedCopies < 1) {
+        copyCount.value = String(order.copies);
+        return;
+      }
+
+      if (order.pagesPerCopy !== null && order.pagesPerCopy * selectedCopies > MAX_PRINTED_PAGES) {
+        copyCount.value = String(order.copies);
+        showMessage("You have reached the limit of 10 printed pages. Reduce the number of copies or pages.");
+        return;
+      }
+
+      order.copies = selectedCopies;
+      updatePageSummary();
       clearMessage();
     });
 
@@ -706,8 +722,24 @@ body {
         return;
       }
 
+      if (order.pagesPerCopy === null) {
+        showMessage("Please enter or calculate the document page count before continuing.");
+        if (manualPageCountControl.style.display !== "none") {
+          manualPageCount.focus();
+        }
+        return;
+      }
+
+      const totalPrintedPages = order.pagesPerCopy * order.copies;
+      if (totalPrintedPages > MAX_PRINTED_PAGES) {
+        showMessage("You have reached the limit of 10 printed pages.");
+        return;
+      }
+
       showMessage(
         `Your order is ready for review. File: ${order.file.name}. ` +
+        `Pages per copy: ${order.pagesPerCopy}. Copies: ${order.copies}. ` +
+        `Total printed pages: ${totalPrintedPages}. ` +
         `Print sides: ${order.sides}. Colour mode: ${order.color}. ` +
         "A payment gateway must be connected to process real payments."
       );
